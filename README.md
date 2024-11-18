@@ -106,7 +106,39 @@ apkdv/siyuan-unlock \  # 使用的镜像源名称
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=appdev/siyuan-unlock&type=Date)](https://star-history.com/#appdev/siyuan-unlock&Date)
+<a href="https://star-history.com/#siyuan-note/siyuan&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=siyuan-note/siyuan&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=siyuan-note/siyuan&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=siyuan-note/siyuan&type=Date" />
+ </picture>
+</a>
+
+## 🗺️ Roadmap
+
+* [SiYuan development plan and progress](https://github.com/orgs/siyuan-note/projects/1)
+* [SiYuan changelog](CHANGELOG.md)
+
+## 🚀 Download Setup
+
+It is recommended to give priority to installing through the application market on the desktop and mobile, so that you can upgrade the version with one click in the future.
+
+### App Market
+
+Mobile:
+
+* [App Store](https://apps.apple.com/us/app/siyuan/id1583226508)
+* [Google Play](https://play.google.com/store/apps/details?id=org.b3log.siyuan)
+* [F-Droid](https://f-droid.org/packages/org.b3log.siyuan)
+
+Desktop:
+
+* [Microsoft Store](https://apps.microsoft.com/detail/9p7hpmxp73k4)
+
+### Installation Package
+
+* [B3log](https://b3log.org/siyuan/en/download.html)
+* [GitHub](https://github.com/siyuan-note/siyuan/releases)
 
 ### Docker 部署
 
