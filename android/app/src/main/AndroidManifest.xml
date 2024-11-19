@@ -31,7 +31,7 @@
     <application
         android:name=".App"
         android:icon="@drawable/icon"
-        android:label="@string/app_name"
+        android:label="思源笔记"
         android:localeConfig="@xml/locales_config"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
@@ -120,7 +120,7 @@
         -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="@string/app_package_name"
+            android:authorities="org.b3log.siyuan"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
@@ -130,7 +130,7 @@
         <!-- 多渠道打包配置 -->
         <meta-data
             android:name="CHANNEL"
-            android:value="${CHANNEL}" />
+            android:value="googleplay" />
 
     </application>
 
