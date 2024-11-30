@@ -3,7 +3,7 @@
 echo 'Building UI'
 cd app
 rm -rf app/stage/build
-npm install && npm run build && npm run build:export
+pnpm install && pnpm run build && pnpm run build:export
 cd ..
 
 echo 'Cleaning Builds'
@@ -22,12 +22,14 @@ export CGO_ENABLED=1
 echo 'Building Kernel amd64'
 export GOOS=linux
 export GOARCH=amd64
-export CC=~/x86_64-linux-musl-cross/bin/x86_64-linux-musl-gcc
+#export CC=~/x86_64-linux-musl-cross/bin/x86_64-linux-musl-gcc
+export CC=/usr/bin/x86_64-linux-musl-gcc
 go build -buildmode=pie --tags fts5 -v -o "../app/kernel-linux/SiYuan-Kernel" -ldflags "-s -w -extldflags -static-pie" .
 
 echo 'Building Kernel arm64'
 export GOARCH=arm64
-export CC=~/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc
+#export CC=~/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc
+export CC=/usr/bin/aarch64-linux-musl-gcc
 go build -buildmode=pie --tags fts5 -v -o "../app/kernel-linux-arm64/SiYuan-Kernel" -ldflags "-s -w -extldflags -static-pie" .
 cd ..
 
