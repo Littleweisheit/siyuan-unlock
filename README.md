@@ -55,54 +55,61 @@ apkdv/siyuan-unlock \  # 使用的镜像源名称
 
 ![feature0.png](https://b3logfile.com/file/2024/01/feature0-1orBRlI.png)
 
-## 🔮 特性
+![feature51.png](https://b3logfile.com/file/2024/02/feature5-1-uYYjAqy.png)
 
-大部分功能是免费的，即使是在商业环境下使用。
+## 🔮 Features
 
-* 内容块
-    * 块级引用和双向链接
-    * 自定义属性
-    * SQL 查询嵌入
-    * 协议 `siyuan://`
-* 编辑器
-    * Block 风格
-    * Markdown 所见即所得
-    * 列表大纲
-    * 块缩放聚焦
-    * 块横向排版
-    * 百万字大文档编辑
-    * 数学公式、图表、流程图、甘特图、时序图、五线谱等
-    * 网页剪藏
-    * PDF 标注双链
-* 导出
-    * 引用块和嵌入块
-    * 带 assets 文件夹的标准 Markdown
-    * PDF、Word 和 HTML
-    * 复制到微信公众号、知乎和语雀
-* 数据库
-    * 表格视图
-* 间隔重复
-* 模板片段
-* JavaScript/CSS 代码片段
-* Android/iOS APP
-* Docker 部署
-* [API](API_zh_CN.md)
-* 社区集市
+Most features are free, even for commercial use.
 
-部分功能需要付费会员才能使用，更多细节请参考[定价](https://b3log.org/siyuan/pricing.html)。
+* Content block
+  * Block-level reference and two-way links
+  * Custom attributes
+  * SQL query embed
+  * Protocol `siyuan://`
+* Editor
+  * Block-style
+  * Markdown WYSIWYG
+  * List outline
+  * Block zoom-in
+  * Million-word large document editing
+  * Mathematical formulas, charts, flowcharts, Gantt charts, timing charts, staffs, etc.
+  * Web clipping
+  * PDF Annotation link
+* Export
+  * Block ref and embed
+  * Standard Markdown with assets
+  * PDF, Word and HTML
+  * Copy to WeChat MP, Zhihu and Yuque
+* Database
+  * Table view
+* Flashcard spaced repetition
+* AI writing and Q/A chat via OpenAI API
+* Tesseract OCR 
+* Multi-tab, drag and drop to split screen
+* Template snippet
+* JavaScript/CSS snippet
+* Android/iOS/HarmonyOS App
+* Docker deployment
+* [API](https://github.com/siyuan-note/siyuan/blob/master/API.md)
+* Community marketplace
+
+Some features are only available to paid members, for more details please refer to [Pricing](https://b3log.org/siyuan/en/pricing.html).
 
 ## 🏗️ 架构设计和开源生态
 
 ![思源笔记架构设计](https://b3logfile.com/file/2023/05/SiYuan_Arch-Sgu8vXT.png "思源笔记架构设计")
 
-* [bazzar](https://github.com/siyuan-note/bazaar)：社区集市
-* [dejavu](https://github.com/siyuan-note/dejavu)：数据仓库
-* [riff](https://github.com/siyuan-note/riff)：间隔重复系统
-* [petal](https://github.com/siyuan-note/petal)：插件 API
-* [chrome](https://github.com/siyuan-note/siyuan-chrome)：Chrome 扩展
-* [lute](https://github.com/88250/lute)：结构化的编辑器引擎，支持 Go 和 JavaScript
-* [ios](https://github.com/siyuan-note/siyuan-ios): iOS APP
-* [android](https://github.com/appdev/siyuan-unlock/releases): Android APP
+| Project                                                  | Description           | Forks                                                                           | Stars                                                                                | 
+|----------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| [lute](https://github.com/88250/lute)                    | Editor engine         | ![GitHub forks](https://img.shields.io/github/forks/88250/lute)                 | ![GitHub Repo stars](https://img.shields.io/github/stars/88250/lute)                 |
+| [chrome](https://github.com/siyuan-note/siyuan-chrome)   | Chrome/Edge extension | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/siyuan-chrome)  | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/siyuan-chrome)  |
+| [bazaar](https://github.com/siyuan-note/bazaar)          | Community marketplace | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/bazaar)         | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/bazaar)         |
+| [dejavu](https://github.com/siyuan-note/dejavu)          | Data repo             | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/dejavu)         | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/dejavu)         |
+| [petal](https://github.com/siyuan-note/petal)            | Plugin API            | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/petal)          | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/petal)          |
+| [android](https://github.com/siyuan-note/siyuan-android) | Android App           | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/siyuan-android) | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/siyuan-android) |
+| [ios](https://github.com/siyuan-note/siyuan-ios)         | iOS App               | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/siyuan-ios)     | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/siyuan-ios)     |
+| [harmony](https://github.com/siyuan-note/siyuan-harmony) | HarmonyOS App         | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/siyuan-harmony) | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/siyuan-harmony) |
+| [riff](https://github.com/siyuan-note/riff)              | Spaced repetition     | ![GitHub forks](https://img.shields.io/github/forks/siyuan-note/riff)           | ![GitHub Repo stars](https://img.shields.io/github/stars/siyuan-note/riff)           |
 
 ## 🌟 Star History
 
@@ -258,14 +265,15 @@ services:
 * 桌面端：<kbd>设置</kbd> - <kbd>导出</kbd> - <kbd>导出 Data</kbd> / <kbd>导入 Data</kbd>
 * 移动端：<kbd>右侧栏</kbd> - <kbd>关于</kbd> - <kbd>导出 Data</kbd> / <kbd>导入 Data</kbd>
 
-### 思源是开源的吗？
+### Is SiYuan open source?
 
-思源笔记是完全开源的，欢迎参与贡献：
+SiYuan is completely open source, and contributions are welcome:
 
-* [界面和内核](https://github.com/siyuan-note/siyuan)
-* [Android 端](https://github.com/siyuan-note/siyuan-android)
-* [iOS 端](https://github.com/siyuan-note/siyuan-ios)
-* [Chrome 剪藏扩展](https://github.com/siyuan-note/siyuan-chrome)
+* [User Interface and Kernel](https://github.com/siyuan-note/siyuan)
+* [Android](https://github.com/siyuan-note/siyuan-android)
+* [iOS](https://github.com/siyuan-note/siyuan-ios)
+* [HarmonyOS](https://github.com/siyuan-note/siyuan-harmony)
+* [Chrome Clipping Extension](https://github.com/siyuan-note/siyuan-chrome)
 
 更多细节请参考[开发指南](https://github.com/siyuan-note/siyuan/blob/master/.github/CONTRIBUTING_zh_CN.md)。
 
