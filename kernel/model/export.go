@@ -610,6 +610,7 @@ func ExportDocx(id, savePath string, removeAssets, merge bool) (fullPath string,
 	}
 	defer os.Remove(tmpDir)
 	name, content := ExportMarkdownHTML(id, tmpDir, true, merge)
+	content = strings.ReplaceAll(content, "  \n", "<br>\n")
 
 	tmpDocxPath := filepath.Join(tmpDir, name+".docx")
 	args := []string{ // pandoc -f html --resource-path=请从这里开始 请从这里开始\index.html -o test.docx
@@ -751,8 +752,7 @@ func ExportMarkdownHTML(id, savePath string, docx, merge bool) (name, dom string
 		from := filepath.Join(util.DataDir, emoji)
 		to := filepath.Join(savePath, emoji)
 		if err := filelock.Copy(from, to); err != nil {
-			logging.LogErrorf("copy emojis from [%s] to [%s] failed: %s", from, savePath, err)
-			return
+			logging.LogErrorf("copy emojis from [%s] to [%s] failed: %s", from, to, err)
 		}
 	}
 
@@ -909,8 +909,7 @@ func ExportHTML(id, savePath string, pdf, image, keepFold, merge bool) (name, do
 			from := filepath.Join(util.DataDir, emoji)
 			to := filepath.Join(savePath, emoji)
 			if err := filelock.Copy(from, to); err != nil {
-				logging.LogErrorf("copy emojis from [%s] to [%s] failed: %s", from, savePath, err)
-				return
+				logging.LogErrorf("copy emojis from [%s] to [%s] failed: %s", from, to, err)
 			}
 		}
 	}
@@ -1473,11 +1472,6 @@ func ExportNotebookMarkdown(boxID string) (zipPath string) {
 	docFiles := box.ListFiles("/")
 	var docPaths []string
 	for _, docFile := range docFiles {
-		id := strings.TrimSuffix(path.Base(docFile.path), ".sy")
-		if !ast.IsNodeIDPattern(id) {
-			continue
-		}
-
 		docPaths = append(docPaths, docFile.path)
 	}
 
@@ -1726,6 +1720,16 @@ func exportSYZip(boxID, rootDirPath, baseFolderName string, docPaths []string) (
 			}
 
 			copiedAssets.Add(asset)
+		}
+
+		// 复制自定义表情图片
+		emojis := emojisInTree(tree)
+		for _, emoji := range emojis {
+			from := filepath.Join(util.DataDir, emoji)
+			to := filepath.Join(exportFolder, emoji)
+			if copyErr := filelock.Copy(from, to); copyErr != nil {
+				logging.LogErrorf("copy emojis from [%s] to [%s] failed: %s", from, to, copyErr)
+			}
 		}
 	}
 
@@ -3108,11 +3112,11 @@ func prepareExportTrees(docPaths []string) (defBlockIDs []string, trees *map[str
 	treeCache := &map[string]*parse.Tree{}
 	defBlockIDs = []string{}
 	for _, p := range docPaths {
-		if strings.HasSuffix(p, ".sy") {
+		id := strings.TrimSuffix(path.Base(p), ".sy")
+		if !ast.IsNodeIDPattern(id) {
 			continue
 		}
 
-		id := util.GetTreeID(p)
 		tree, err := loadTreeWithCache(id, treeCache)
 		if err != nil {
 			continue
